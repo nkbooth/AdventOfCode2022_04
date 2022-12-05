@@ -15,8 +15,11 @@
 
             Console.WriteLine(string.Format("Read {0} pairs of elves.", assignmentPairs.PairList.Count));
             
-            containedAssignments = assignmentPairs.GetOverlappedAssignmentCount();
-            Console.WriteLine(string.Format("There are {0} pairs of elves with overlapping assignments.", containedAssignments));
+            containedAssignments = assignmentPairs.GetCompletelyOverlappedAssignmentCount();
+            Console.WriteLine(string.Format("There are {0} pairs of elves with completely overlapping assignments.", containedAssignments));
+
+            int overlappedAssignments = assignmentPairs.GetOverlappedAssignmentCount();
+            Console.WriteLine(string.Format("There are {0} pairs of elves with overlapping assignments.", overlappedAssignments));
         }
     }
 }

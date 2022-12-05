@@ -16,12 +16,25 @@ namespace AdventOfCode_04
             }
         }
 
-        public int GetOverlappedAssignmentCount()
+        public int GetCompletelyOverlappedAssignmentCount()
         {
             int containedAssignments = 0;
             foreach (AssignmentPairs pair in PairList)
             {
                 if ((pair.ElfOneFloor >= pair.ElfTwoFloor && pair.ElfOneCeiling <= pair.ElfTwoCeiling) || (pair.ElfTwoFloor >= pair.ElfOneFloor && pair.ElfTwoCeiling <= pair.ElfOneCeiling))
+                {
+                    containedAssignments++;
+                }
+            }
+
+            return containedAssignments;
+        }
+        public int GetOverlappedAssignmentCount()
+        {
+            int containedAssignments = 0;
+            foreach (AssignmentPairs pair in PairList)
+            {
+                if ((pair.ElfOneFloor >= pair.ElfTwoFloor && pair.ElfOneFloor <= pair.ElfTwoCeiling) || (pair.ElfTwoFloor >= pair.ElfOneFloor && pair.ElfTwoFloor <= pair.ElfOneCeiling))
                 {
                     containedAssignments++;
                 }
